@@ -1,0 +1,60 @@
+@import "../../../style-config/variable.scss";
+@import "../../../style-config/mixins.scss";
+
+.call-to-action {
+    width: fit-content;
+    padding: 10px 15px;
+    background: $gray-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    @include typography(18px, 400, 1);
+
+    .text,
+    .arrow-icon,
+    .icon {
+        position: relative;
+        z-index: 1;
+        transition: all ease 500ms;
+    }
+
+    .arrow-icon{
+        color: $black;
+        background-color: transparent;
+    }
+
+    .icon{
+        width: 21px;
+        height: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        font-size: 20px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $gray-white;
+        z-index: 0;
+        transform: translateX(-100%);
+        transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    &:hover {
+        &::before {
+            transform: translateX(0);
+        }
+        .text{
+            color: $black;
+        }
+    }
+}

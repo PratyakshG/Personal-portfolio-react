@@ -1,0 +1,14 @@
+@import "../../style-config/mixins.scss";
+
+
+.blogs-content-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 25px;
+    @include small-screen{
+        margin-top: 75px;
+        flex-direction: row;
+    }
+}
